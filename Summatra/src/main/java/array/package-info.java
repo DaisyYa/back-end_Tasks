@@ -1,4 +1,0 @@
-/**
- * little tasks
- */
-package array;

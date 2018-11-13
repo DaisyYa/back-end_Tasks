@@ -1,4 +1,8 @@
-package array;
+package com.tenExpert.array;
+
+
+import com.tenExpert.array.exception.ArraySummaterException;
+
 import java.util.ArrayList;
 
 /**
@@ -7,10 +11,10 @@ import java.util.ArrayList;
 public class PairSummater implements IArraySummater {
 
     /**
-     *
-     * @param array array of numbers
+     * sum fo pair numbers
+     * @param array arra of numbers
      * @return maximum sum pair
-     * @throws ArraySummaterException if array length is not a multiple of two
+     * @throws ArraySummaterException if arra length is not a multiple of two
      */
     public int sum(final int[] array) throws ArraySummaterException {
         if (array.length % 2 == 0 && array.length != 0) {

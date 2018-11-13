@@ -1,8 +1,9 @@
-package array;
+package com.tenExpert.array;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import com.tenExpert.array.SimpleSummater;
 
 public class SimpleSummaterTest {
     private SimpleSummater simpleSummater;
@@ -29,13 +30,6 @@ public class SimpleSummaterTest {
     public void simpleSummaterNullArrayTest() {
         int[] evenArray = {};
         int maxSum = 0;
-        int maxSimpleSum = simpleSummater.sum(evenArray);
-        Assert.assertEquals(maxSum, maxSimpleSum);
-    }
-    @Test
-    public void simpleSummaterOneNumberInArrayTest() {
-        int[] evenArray = {5};
-        int maxSum = 5;
         int maxSimpleSum = simpleSummater.sum(evenArray);
         Assert.assertEquals(maxSum, maxSimpleSum);
     }

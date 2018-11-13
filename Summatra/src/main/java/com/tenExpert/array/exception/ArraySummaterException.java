@@ -1,4 +1,4 @@
-package array;
+package com.tenExpert.array.exception;
 
 /**
  * ArraySummaterException class for error messages
