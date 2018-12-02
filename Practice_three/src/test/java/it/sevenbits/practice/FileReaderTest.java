@@ -34,9 +34,9 @@ public class FileReaderTest {
     public void readLineMock2Test() {
         FileReader mockFileReader = mock(FileReader.class);
         Example example = new Example();
-        when(mockFileReader.hasMoreLines()).thenReturn(true, true, true, true, false);
-        when(mockFileReader.readLine()).thenReturn("file.txt line 1: 1","file.txt line 2: 2", "file.txt line 3: 3", "file.txt line 4: 4");
-        Assert.assertEquals(18, example.getLongestLineCharsCount(mockFileReader));
+        when(mockFileReader.hasMoreLines()).thenReturn(false);
+        when(mockFileReader.readLine()).thenReturn("");
+        Assert.assertEquals(0, example.getLongestLineCharsCount(mockFileReader));
     }
 
 }

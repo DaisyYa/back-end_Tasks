@@ -1,16 +1,18 @@
 package it.sevenbits.practice;
 
-import java.util.ArrayList;
-
+/**
+ * class example with method getLongestLineCharsCount
+ */
 public class Example {
-    private ArrayList<Integer> arrayList = new ArrayList();
-
-    public int getLongestLineCharsCount(FileReader fileReader) {
+    /**
+     * find maximum string length
+     * @param fileReader class instance FileReader
+     * @return maximum string length(int)
+     */
+    public int getLongestLineCharsCount(final FileReader fileReader) {
+        int maxLength = 0;
         while (fileReader.hasMoreLines()) {
-            arrayList.add(fileReader.readLine().length());
-        }
-        int maxLength = arrayList.get(0);
-        for(int length: arrayList){
+            int length = fileReader.readLine().length();
             if (length > maxLength) {
                 maxLength = length;
             }

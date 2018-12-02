@@ -2,8 +2,15 @@ package it.sevenbits;
 
 import java.io.*;
 
+/**
+ * class main
+ */
 public class Main {
-    public static void main(final String[] arg){
+    /**
+     * main method
+     * @param arg String[]
+     */
+    public static void main(final String[] arg) {
         File file = new File("MyHomework.txt");
         File file1 = new File("Homework3.txt");
         try {
@@ -22,7 +29,7 @@ public class Main {
         String surname = "Yakubova";
         byte[] surnameToByte = surname.getBytes();
         try (BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(file))) {
-            bufferedOutputStream.write(array,0, array.length);
+            bufferedOutputStream.write(array, 0, array.length);
             bufferedOutputStream.write(surnameToByte, 0, surnameToByte.length);
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");

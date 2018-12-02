@@ -5,13 +5,21 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class FileReader implements AutoCloseable{
+/**
+ * class FileReader with methods readLine and hasMoreLines
+ * reads one by one and converts it
+ */
+public class FileReader implements AutoCloseable {
     private File file;
     private int i = 0;
     private String nextLine = null;
     private BufferedReader bufferedReader = null;
 
-    public FileReader(File file) {
+    /**
+     * create FileReader
+     * @param file file
+     */
+    public FileReader(final File file) {
         this.file = file;
         try {
             bufferedReader = new BufferedReader(new java.io.FileReader(file));
@@ -29,7 +37,7 @@ public class FileReader implements AutoCloseable{
         return nextLine;
     }
 
-    private void setNextLine(String nextLine) {
+    private void setNextLine(final String nextLine) {
         this.nextLine = nextLine;
     }
 
@@ -41,6 +49,10 @@ public class FileReader implements AutoCloseable{
         }
     }
 
+    /**
+     * reads a string and adds file name and line number data to it
+     * @return converted string
+     */
     public String readLine() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(getFile().getName()).append(" line ").append(++i).append(": ").append(getNextLine());
@@ -48,7 +60,11 @@ public class FileReader implements AutoCloseable{
         return stringBuilder.toString();
     }
 
-    public boolean hasMoreLines(){
+    /**
+     * checks if the next line is read
+     * @return true if can read the next line
+     */
+    public boolean hasMoreLines() {
         if (getNextLine() == null) {
             return false;
         } else {
