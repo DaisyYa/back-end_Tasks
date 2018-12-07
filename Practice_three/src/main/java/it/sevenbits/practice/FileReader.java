@@ -45,7 +45,7 @@ public class FileReader implements AutoCloseable {
         try {
             setNextLine(bufferedReader.readLine());
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error! can't read the next line");
         }
     }
 

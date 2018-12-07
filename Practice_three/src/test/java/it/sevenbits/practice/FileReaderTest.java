@@ -19,9 +19,11 @@ public class FileReaderTest {
         try {
             fileReader.close();
         } catch (Exception e) {
-            e.printStackTrace();
+           System.out.println("Error! can't close");
         }
     }
+
+
     @Test
     public void readLineMockTest() {
         FileReader mockFileReader = mock(FileReader.class);
@@ -30,6 +32,7 @@ public class FileReaderTest {
         when(mockFileReader.readLine()).thenReturn("file.txt line 1: 1","file.txt line 2: 22", "file.txt line 3: 333", "file.txt line 4: 4444");
         Assert.assertEquals(21, example.getLongestLineCharsCount(mockFileReader));
     }
+
     @Test
     public void readLineMock2Test() {
         FileReader mockFileReader = mock(FileReader.class);
