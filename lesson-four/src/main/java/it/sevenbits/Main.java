@@ -22,6 +22,7 @@ public class Main {
 
         Map myMap = firstAndLastSymbol(strings);
         System.out.println(myMap);
+
         List<Integer> list1 = new ArrayList<Integer>();
         list1.add(1);
         list1.add(2);
@@ -32,23 +33,48 @@ public class Main {
         list2.add(2);
         list2.add(6);
         list2.add(8);
-        System.out.println(getUniqueValues(list1, list2));
+        List<Integer> list3 = new ArrayList<Integer>();
+        list3.add(2);
+        list3.add(8);
+        list3.add(4);
+        list3.add(3);
+        List<Integer> list4 = new ArrayList<Integer>();
+        list4.add(9);
+        list4.add(4);
+        list4.add(3);
+        list4.add(1);
+        List<Integer> list5 = new ArrayList<Integer>();
+        list5.add(8);
+        list5.add(10);
+        list5.add(5);
+        list5.add(7);
+
+        List<List<Integer>> lists = new ArrayList<List<Integer>>();
+        lists.add(list1);
+        lists.add(list2);
+        lists.add(list3);
+        lists.add(list4);
+        System.out.println(getUniqueValues(lists, list5));
 
     }
 
     /**
      * get Unique Values
-     * @param list1 arrays of int
+     * @param list1 arrays of arrays
      * @param list2 arrays of int
      * @return ArrayList of unique values
      */
-    private static ArrayList getUniqueValues(final List<Integer> list1, final List<Integer> list2) {
-        ArrayList<Integer> arrayList1 = new ArrayList<Integer>(list1);
+    private static ArrayList getUniqueValues(final List<List<Integer>> list1, final List<Integer> list2) {
         ArrayList<Integer> arrayList2 = new ArrayList<Integer>(list2);
-        arrayList1.removeAll(list2);
-        arrayList2.removeAll(list1);
-        arrayList1.addAll(arrayList2);
-        return arrayList1;
+        ArrayList<ArrayList<Integer>> list1Copy = new ArrayList<ArrayList<Integer>>();
+        for (int i = 0; i < list1.size(); i++) {
+            ArrayList<Integer> listCopy = new ArrayList<Integer>(list1.get(i));
+            listCopy.removeAll(arrayList2);
+            if(listCopy.size() == list1.get(i).size()) {
+                list1Copy.add(listCopy);
+            }
+        }
+        return list1Copy;
     }
 
     /**
